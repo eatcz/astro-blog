@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "myharmonyos";
+    src: url('../assets/font/HarmonyOS.woff2') format("woff2");
+    font-display: swap;
+}
+html, textarea {
+    font-family: myharmonyos,sans-serif, PingFang\ SC, Hiragino\ Sans\ GB, Microsoft\ YaHei, STHeiti, WenQuanYi\ Micro\ Hei, Helvetica, Arial, sans-serif !important;
+}
+
+html {
+    background-color: #f6f6f6;
+  }
+  
+  body {
+    margin: 0 auto;
+    width: 100%;
+    /* max-width: 80ch; */
+    /* padding: 1rem; */
+    line-height: 1.5;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+  }
+
+  /* nav styles */
+
+
+
+/* .nav-links {
+    width: 100%;
+    top: 5rem;
+    left: 48px;
+    background-color: #ff9776;
+    display: none;
+    margin: 0;
+  }
+   */
+  .expanded {
+    display: unset;
+  }
+  
+  @media screen and (min-width: 768px) {
+    /* .nav-links {
+       margin-left: 5em; 
+       display: block; 
+      margin: 0 auto;
+      position: static;
+      width: auto;
+      background: none;
+    } */
+    .nav-links{
+        background-color: none;
+    }
+
+    .hamburger {
+        display: none;
+      }
+  
+  }

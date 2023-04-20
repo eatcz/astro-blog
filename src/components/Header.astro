@@ -1,7 +1,13 @@
 ---
 import Nav from "./Nav.astro";
+import Hanmurger from "./Hanmurger.astro";
 ---
 
-<header class="header bg-gray-900 fixed w-full z-10">
-  <Nav />
+<header
+  class="header fixed w-full z-10 border-b border-b-neutral-200 dark:border-b-neutral-700"
+>
+  <nav class="max-w-3xl min-w-max mx-auto py-4 text-gray-800">
+    <Hanmurger />
+    <Nav />
+  </nav>
 </header>

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 
 const pageTitle = "About Me";
 
@@ -16,9 +17,31 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+// 定义css变量
+const skillColor = "navy";
+
+const fontWeight = "100";
+// 大写字母
+const textCase = "uppercase";
 ---
 
 <Layout title="关于">
+  <head>
+    <style define:vars={{ skillColor, fontWeight, textCase }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: green;
+        font-weight: bold;
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
+  </head>
   <a href="/">Home</a>
   <a href="/about/">About</a>
   <a href="/blog/">Blog</a>
@@ -39,7 +62,7 @@ const goal = 3;
   </ul>
   <p>My skills are:</p>
   <ul>
-    {skills.map((skill) => <li>{skill}</li>)}
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
 
   {happy && <p>I am happy to be learning Astro!</p>}
