@@ -46,20 +46,25 @@ html {
   }
   
   @media screen and (min-width: 768px) {
-    /* .nav-links {
-       margin-left: 5em; 
-       display: block; 
-      margin: 0 auto;
-      position: static;
-      width: auto;
-      background: none;
-    } */
-    .nav-links{
+    /* .nav-links{
         background-color: none;
-    }
+    } */
 
     .hamburger {
         display: none;
       }
   
+  }
+
+  /* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #0003;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
   }

@@ -27,24 +27,6 @@ const textCase = "uppercase";
 ---
 
 <Layout title="关于">
-  <head>
-    <style define:vars={{ skillColor, fontWeight, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: green;
-        font-weight: bold;
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
-  </head>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
   <h1>{pageTitle}</h1>
   <h2>... and my new Astro site!</h2>
 

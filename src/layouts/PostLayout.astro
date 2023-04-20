@@ -1,0 +1,20 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+console.log(frontmatter);
+---
+
+<Layout title={frontmatter.title}>
+  <div class="details w-full">
+    <header class="header">
+      <div class="cover h-2/5">
+        <img
+          class="w-full h-full object-cover"
+          src="https://img0.baidu.com/it/u=2673844194,1241778327&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"
+          alt=""
+        />
+      </div>
+    </header>
+  </div>
+  <slot />
+</Layout>
