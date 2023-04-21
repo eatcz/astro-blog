@@ -1,4 +1,35 @@
 ---
+import Layout from "../layouts/Layout.astro";
+const allPosts = await Astro.glob("./posts/*.md");
+// 获取时间
+const date = [
+  ...new Set(
+    allPosts.map(
+      (post) => post.frontmatter.pubDate.slice(0, 10)
+      //   console.log(post.frontmatter.pubDate.slice(0, 10));
+    )
+  ),
+];
+
+console.log(date);
+
+// console.log(allPosts.);
 ---
 
-<div>archive</div>
+<Layout title="归档">
+  <div class="archives">
+    {
+      date.map((item) => (
+        <div>
+          <p>{item}</p>
+          <p>
+            {allPosts.filter((post) => {
+              if (post.frontmatter.pubDate.includes(item))
+                post.frontmatter.title;
+            })}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</Layout>

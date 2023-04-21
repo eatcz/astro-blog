@@ -2,6 +2,7 @@
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 // console.log(frontmatter);
+const { minutesRead } = Astro.props.frontmatter;
 ---
 
 <Layout title={frontmatter.title}>
@@ -9,7 +10,7 @@ const { frontmatter } = Astro.props;
     <header class="header">
       <div class="cover md:h-80">
         <img
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover rounded-md"
           src={frontmatter.image.url}
           alt=""
         />
@@ -18,7 +19,13 @@ const { frontmatter } = Astro.props;
     <main class="my-5">
       <header class="main-header flex flex-col">
         <h1 class="text-3xl">{frontmatter.title}</h1>
-        <p class="flex-1 ml-auto">发布于:{frontmatter.pubDate.slice(0, 10)}</p>
+
+        <div class="flex-1 ml-auto my-5 text-right">
+          <p class="start_time">
+            发布于:{frontmatter.pubDate.slice(0, 10)}
+          </p>
+          <p class="read_time">{minutesRead}</p>
+        </div>
       </header>
       <div class="content">
         <slot />

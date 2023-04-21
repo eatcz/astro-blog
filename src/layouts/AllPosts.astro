@@ -7,14 +7,12 @@ const { title, url } = Astro.props;
 
 <ul role="list" class="link-card-grid">
   {
-    allPosts
-      .splice(0, 5)
-      .map((post) => (
-        <Card
-          href={post.url}
-          title={post.frontmatter.title}
-          body={post.frontmatter.description}
-        />
-      ))
+    allPosts.map((post) => (
+      <Card
+        href={post.url}
+        title={post.frontmatter.title}
+        body={post.frontmatter.description}
+      />
+    ))
   }
 </ul>
