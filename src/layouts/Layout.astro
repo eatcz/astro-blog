@@ -21,11 +21,11 @@ const { title } = Astro.props;
   </head>
   <body class="relative">
     <Header />
-    <div
-      class="container flex flex-col items-center mx-auto px-5 md:max-w-3xl lg:max-w-5xl min-h-screen pt-16 dark:bg-gray-900 transition-all"
+    <main
+      class="flex flex-col items-center px-5 min-h-screen pt-16 dark:bg-gray-900 transition-all"
     >
       <slot />
-    </div>
+    </main>
     <Footer />
     <!-- <BackDrop /> -->
   </body>

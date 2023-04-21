@@ -1,10 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Post from "../layouts/Post.astro";
+import { Icon } from "astro-icon";
 ---
 
 <Layout title="首页">
-  <main class="main">
+  <!-- <main class="main w-full dark:bg-gray-900"> -->
+  <div class="container max-w-3xl mx-auto">
+    <div class="my-5 flex gap-2">
+      <Icon name="openmoji:half-orange-fruit" />
+      <h3 class="dark:text-white">最新文章</h3>
+    </div>
     <Post />
-  </main>
+  </div>
+
+  <!-- </main> -->
 </Layout>
