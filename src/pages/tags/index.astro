@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const allPosts = await Astro.glob("../posts/*.md");
+import Tags from "../../components/Tags.astro";
+const uniqueTags = [
+  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+];
+console.log(uniqueTags);
+---
+
+<Layout title="标签页">
+  <p>All Post Tags</p>
+  <!-- <ul class="tags"> -->
+  {
+    uniqueTags.map((tag) => (
+      <Tags tag={tag} />
+      // <li class="tag">
+      //   <a href={`/tags/${tag}`}>{tag}</a>
+      // </li>
+    ))
+  }
+  <!-- </ul> -->
+</Layout>

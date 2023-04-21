@@ -1,22 +1,9 @@
 ---
+import { Icon } from "astro-icon";
 ---
 
-<head>
-  <style>
-    .hamburger {
-      padding-right: 20px;
-      cursor: pointer;
-    }
-
-    .hamburger .line {
-      display: block;
-      width: 25px;
-      height: 2px;
-      margin-bottom: 6px;
-      background-color: #eee;
-    }
-  </style>
-</head>
-<div class="hamburger">
-  <span class="line"></span><span class="line"></span><span class="line"></span>
+<div class="hamburger dark:text-white">
+  <a href="javascript:;">
+    <Icon name="icon-park-outline:hamburger-button" width="30" height="30" />
+  </a>
 </div>

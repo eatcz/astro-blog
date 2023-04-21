@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import BackDrop from "../components/Backdrop";
 import "../styles/global.css";
 export interface Props {
   title: string;
@@ -18,18 +19,14 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="relative">
     <Header />
     <div
-      class="container flex flex-col items-center mx-auto px-5 md:max-w-3xl lg:max-w-5xl min-h-screen pt-16"
+      class="container flex flex-col items-center mx-auto px-5 md:max-w-3xl lg:max-w-5xl min-h-screen pt-16 dark:bg-gray-900 transition-all"
     >
       <slot />
     </div>
     <Footer />
-    <script>
-      document.querySelector(".hamburger").addEventListener("click", () => {
-        document.querySelector(".nav-links").classList.toggle("expanded");
-      });
-    </script>
+    <!-- <BackDrop /> -->
   </body>
 </html>

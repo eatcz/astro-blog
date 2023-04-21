@@ -1,16 +1,16 @@
 ---
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
-console.log(frontmatter);
+// console.log(frontmatter);
 ---
 
 <Layout title={frontmatter.title}>
-  <div class="details w-full h-full text-center">
+  <div class="details w-full h-full text-center dark:bg-gray-800">
     <header class="header">
       <div class="cover md:h-80">
         <img
           class="w-full h-full object-cover"
-          src="https://img0.baidu.com/it/u=2673844194,1241778327&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"
+          src={frontmatter.image.url}
           alt=""
         />
       </div>
@@ -20,7 +20,9 @@ console.log(frontmatter);
         <h1 class="text-3xl">{frontmatter.title}</h1>
         <p class="flex-1 ml-auto">发布于:{frontmatter.pubDate.slice(0, 10)}</p>
       </header>
+      <div class="content">
+        <slot />
+      </div>
     </main>
   </div>
-  <slot />
 </Layout>
