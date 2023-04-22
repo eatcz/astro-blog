@@ -1,11 +1,39 @@
 ---
+import Nav from "../Nav.astro";
+import ThemeIcon from "../ThemeIcon.astro";
 ---
 
 <div
   id="backdrop"
-  class="backdrop hide-menu fixed top-0 left-0 right-0 bottom-0 bg-black/75 z-10 transition-transform"
+  class="backdrop hide-menu fixed top-0 pt-16 left-0 right-0 bottom-0 bg-black/75 z-10 transition-transform"
 >
-  <div class="asider w-[60vw] bg-white h-full dark:bg-gray-800"></div>
+  <div class="asider text-center w-[60vw] bg-white h-full dark:bg-gray-800">
+    <nav
+      class="nav-links md:flex md:bg-transparent pt-5 gap-2 justify-center ml-auto mr-4 dark:text-white"
+    >
+      <a
+        class="block text-center text-sm px-2 py-1 hover:bg-neutral-200 transition-all rounded-md"
+        href="/">首页</a
+      >
+      <a
+        class="block text-center text-sm px-2 py-1 hover:bg-neutral-200 transition-all rounded-md"
+        href="/posts/1">文章</a
+      >
+      <a
+        class="block text-center text-sm px-2 py-1 hover:bg-neutral-200 transition-all rounded-md"
+        href="/tags">分类</a
+      >
+      <a
+        class="block text-center text-sm px-2 py-1 hover:bg-neutral-200 transition-all rounded-md"
+        href="/archive">归档</a
+      >
+      <a
+        class="block text-center text-sm px-2 py-1 hover:bg-neutral-200 transition-all rounded-md"
+        href="/about">关于</a
+      >
+    </nav>
+    <!-- <ThemeIcon show /> -->
+  </div>
 </div>
 
 <style>
