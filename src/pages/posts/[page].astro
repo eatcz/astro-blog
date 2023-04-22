@@ -1,27 +1,60 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
+import { Icon } from "astro-icon";
 export const getStaticPaths = async ({ paginate }) => {
   const allPosts = await Astro.glob("./*.md");
-  return paginate(allPosts, { pageSize: 2 });
+  return paginate(allPosts, { pageSize: 1 });
 };
 
 const { page } = Astro.props;
-console.log(page.url);
+
+// console.log(page.url);
 ---
 
 <Layout title="文章">
-  <ul role="list" class="link-card-grid">
-    {
-      page.data.map((post) => (
-        <Card
-          href={post.url}
-          title={post.frontmatter.title}
-          body={post.frontmatter.description}
-        />
-      ))
-    }
-  </ul>
-  {page.url.prev && <a href={page.url.prev}>上一页</a>}
-  <a href={page.url.next}>下一页</a>
+  <div class="warpper flex flex-col flex-1">
+    <article class="flex-1">
+      <ul role="list" class="link-card-grid">
+        {
+          page.data.map((post) => (
+            <Card
+              href={post.url}
+              title={post.frontmatter.title}
+              body={post.frontmatter.description}
+            />
+          ))
+        }
+      </ul>
+    </article>
+    <footer class="flex justify-between my-5">
+      {
+        page.url.prev && (
+          <a class="flex items-center" href={page.url.prev}>
+            <Icon
+              class="rotate-180"
+              name="ic:baseline-keyboard-double-arrow-right"
+              width="20"
+              height="20"
+            />
+            <span>Prev</span>
+          </a>
+        )
+      }
+      <!-- <p>当前第{page.currentPage}页</p> -->
+      <p>{page.currentPage}/{page.lastPage}页</p>
+      {
+        page.url.next && (
+          <a class="flex items-center" href={page.url.next}>
+            <span>Next</span>
+            <Icon
+              name="ic:baseline-keyboard-double-arrow-right"
+              width="20"
+              height="20"
+            />
+          </a>
+        )
+      }
+    </footer>
+  </div>
 </Layout>

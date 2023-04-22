@@ -2,13 +2,17 @@
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 // console.log(frontmatter);
+const allPosts = await Astro.glob("../pages/posts/*.md");
+console.log(allPosts);
+// console.log(Astro.props);
+
 const { minutesRead } = Astro.props.frontmatter;
 ---
 
 <Layout title={frontmatter.title}>
-  <div class="details w-full h-full text-center dark:text-white">
+  <div class="details max-w-3xl h-full text-center dark:text-white">
     <header class="header">
-      <div class="cover md:h-80">
+      <div class="cover md:h-80 dark:opacity-70">
         <img
           class="w-full h-full object-cover rounded-md"
           src={frontmatter.image.url}
@@ -27,7 +31,8 @@ const { minutesRead } = Astro.props.frontmatter;
           <p class="read_time">{minutesRead}</p>
         </div>
       </header>
-      <div class="content">
+      <hr />
+      <div class="content my-4">
         <slot />
       </div>
     </main>

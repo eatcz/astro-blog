@@ -2,8 +2,13 @@
 import { Icon } from "astro-icon";
 ---
 
-<div class="hamburger dark:text-white">
+<div class="hamburger dark:text-white" id="mobile-menu">
   <a href="javascript:;">
-    <Icon name="icon-park-outline:hamburger-button" width="30" height="30" />
+    <Icon
+      name="icon-park-outline:hamburger-button"
+      width="30"
+      aria-hidden="true"
+      height="30"
+    />
   </a>
 </div>
