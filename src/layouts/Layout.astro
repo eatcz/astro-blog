@@ -17,7 +17,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>eatcz</title>
   </head>
   <body class="relative">
     <Header />
@@ -32,12 +32,23 @@ const { title } = Astro.props;
   </body>
   <script>
     const backdrop = document.getElementById("backdrop");
-    const menu = document.getElementById("mobile-menu");
-    menu.addEventListener("click", () => {
-      // backdrop.style.display = "block";
+    const menuShow = document.getElementById("mobile-menu");
+    const menuClose = document.getElementById("mobile-menu-close");
+    menuShow.addEventListener("click", () => {
       document.body.style.overflow = "hidden";
       backdrop.classList.remove("hide-menu");
       backdrop.classList.add("show-menu");
+      menuShow.classList.add("hidden");
+      menuClose.classList.remove("hidden");
+      menuClose.classList.add("block");
+    });
+
+    menuClose.addEventListener("click", () => {
+      backdrop.classList.remove("show-menu", "hidden");
+      backdrop.classList.add("hide-menu");
+      menuShow.classList.remove("hidden");
+      menuClose.classList.add("hidden");
+      document.body.style.overflow = "auto";
     });
   </script>
 
