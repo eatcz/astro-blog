@@ -28,6 +28,10 @@ html {
     font-size: 2.5rem;
   }
 
+  p{
+    font-size: .875rem /* 14/16 */;
+  }
+
   input{
     outline: none;
     box-sizing: border-box;
