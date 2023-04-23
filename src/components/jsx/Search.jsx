@@ -1,7 +1,5 @@
 import Fuse from "fuse.js";
 import { useState } from "react";
-
-// import { Input } from "antd";
 import { baseUrl } from "/public/config.js";
 const onSearch = (value) => console.log(value);
 
@@ -28,12 +26,14 @@ function Search({ searchList }) {
   return (
     <>
       <h3 className="search-jsx text-3xl mb-5">Search</h3>
-      {/* <Input
-        placeholder="Search posts"
-        size="large"
+
+      <input
+        className=" dark:text-white dark:bg-transparent border-e-[1px] border-e-white"
+        type="text"
         value={query}
         onChange={handleOnSearch}
-      /> */}
+        placeholder="Search posts"
+      />
 
       {query.length > 1 && (
         <p className=" my-2">
