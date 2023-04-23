@@ -8,6 +8,7 @@ image:
     url: 'https://p.qqan.com/up/2023-4/202344110312194.jpg' 
     alt: 'The Astro logo with the word One.'
 tags: ["astro", "blogging", "learning in public"]
+slug: '/posts/post-2'
 ---
 
 # Hello Astro

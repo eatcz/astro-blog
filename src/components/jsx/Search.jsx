@@ -41,7 +41,7 @@ function Search({ searchList }) {
       />
 
       {query.length > 1 && (
-        <p>
+        <p className=" my-2">
           共查找到 {posts.length} 条关于'{query}'的搜索结果.
         </p>
       )}
