@@ -11,6 +11,4 @@ tags: ["astro", "blogging", "learning in public"]
 slug: '/posts/post-2'
 ---
 
-# Hello Astro
-
- ` hello astro `
+1
