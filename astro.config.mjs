@@ -10,5 +10,6 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [remarkReadingTime],
   },
+  // 最终部署的链接。用来生成网站地图和最终构建的规范链接。
   site: "https://eatcz.netlify.app/",
 });
