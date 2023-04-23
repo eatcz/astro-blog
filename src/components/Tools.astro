@@ -1,0 +1,19 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+import { Icon } from "astro-icon";
+---
+
+<div class="flex items-center gap-2">
+  <ThemeIcon />
+  <a href="/rss.xml">
+    <Icon
+      class="dark:text-white"
+      name="ph:rss-simple-bold"
+      width="20"
+      height="20"
+    /></a
+  >
+  <a href="/search">
+    <Icon class="dark:text-white" name="ion:search" width="20" height="20" />
+  </a>
+</div>

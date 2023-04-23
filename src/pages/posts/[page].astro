@@ -9,6 +9,8 @@ export const getStaticPaths = async ({ paginate }) => {
 
 const { page } = Astro.props;
 
+console.log(Astro);
+
 // console.log(page.url);
 ---
 
@@ -27,10 +29,23 @@ const { page } = Astro.props;
         }
       </ul>
     </article>
-    <footer class="flex justify-between my-5">
+    <footer class="flex justify-between my-5 items-center">
       {
-        page.url.prev && (
+        page.url.prev ? (
           <a class="flex items-center" href={page.url.prev}>
+            <Icon
+              class="rotate-180"
+              name="ic:baseline-keyboard-double-arrow-right"
+              width="20"
+              height="20"
+            />
+            <span>Prev</span>
+          </a>
+        ) : (
+          <a
+            class="flex items-center cursor-not-allowed opacity-30"
+            href="javascript:;"
+          >
             <Icon
               class="rotate-180"
               name="ic:baseline-keyboard-double-arrow-right"
@@ -42,10 +57,22 @@ const { page } = Astro.props;
         )
       }
       <!-- <p>当前第{page.currentPage}页</p> -->
-      <p>{page.currentPage}/{page.lastPage}页</p>
+      <p class="page-total">{page.currentPage}/{page.lastPage}页</p>
       {
-        page.url.next && (
+        page.url.next ? (
           <a class="flex items-center" href={page.url.next}>
+            <span>Next</span>
+            <Icon
+              name="ic:baseline-keyboard-double-arrow-right"
+              width="20"
+              height="20"
+            />
+          </a>
+        ) : (
+          <a
+            class="flex items-center cursor-not-allowed opacity-30"
+            href="javascript:;"
+          >
             <span>Next</span>
             <Icon
               name="ic:baseline-keyboard-double-arrow-right"
@@ -58,3 +85,6 @@ const { page } = Astro.props;
     </footer>
   </div>
 </Layout>
+<script>
+  // console.log(Astro);
+</script>

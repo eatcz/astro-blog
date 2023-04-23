@@ -10,4 +10,5 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [remarkReadingTime],
   },
+  site: "https://eatcz.netlify.app/",
 });
