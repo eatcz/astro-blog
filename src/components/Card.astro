@@ -10,11 +10,10 @@ const { href, title, body } = Astro.props;
 
 <li class="link-card w-full my-5 dark:bg-gray-800">
   <a class="dark:bg-gray-800 dark:text-white" href={href}>
-    <h2 class="dark:text-white">
+    <h2 class="title">
       {title}
-      <span class="dark:text-white">&rarr;</span>
     </h2>
-    <p class="dark:text-white">
+    <p class="desc dark:text-white">
       {body}
     </p>
   </a>
