@@ -8,6 +8,7 @@ const { title, url } = Astro.props;
 <ul role="list" class="link-card-grid">
   {
     allPosts
+      .reverse()
       .splice(0, 5)
       .map((post) => (
         <Card
